@@ -37,6 +37,7 @@ This is the starter folder structure:
 * You will always write a unit test for each class or functionality you build, as well as integration tests that check the whole project overall.
 * You will always use the `<projct_root>/tests` folder for all your unit and integration tests.
 * Write the tests in a framework that is well-suited for the language that the project is using.
+* If you are writing a plugin, do not test with the full stack. Instead, mock and stub everything very pragmatically. We can't automate these tests fully, easily.
 
 👉 This will help you find issues in your code.
 
