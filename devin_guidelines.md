@@ -28,7 +28,7 @@ This is the starter folder structure:
 
 👉 Whenever you think "I need X", check whether X is present already before you introduce X. Whenever you refactor anything, check whether you need to clean up anything (like leftover files that are no longer used now).
 
-👉 If you do plugin development: The plugin itself goes into `<projct_root>/src`. The framework (CraftCMS, WordPress etc.) goes into `/var/www/<framework>`. When testing a plugin version, copy it from `<projct_root>/src` into the framework's plugin location.
+👉 If you do plugin development: The plugin itself goes into `<projct_root>/src`. The framework (CraftCMS, WordPress etc.) goes into `/var/www/<framework>` for the web server.
 
 ## 🧪 TDD
 
@@ -77,6 +77,19 @@ https://<github_pat_token>@github.com/haslo/devin_<your_project>
 ## 🖥️ External Systems
 
 👉 We do not deploy into the real world. We rarely use real APIs. I will tell you if you should use a real API. Otherwise, we stub and mock real-world interfaces. Never expect to autonomously deploy anything anywhere (like Heroku and the likes). I don't trust you enough for that.
+
+## 📦 Building
+
+👉 If there is a literal build process, use that (through `package.json` for JS etc.)
+
+👉 An example build script for WordPress, CraftCMS etc. could be:
+
+```bash
+#!/bin/bash
+
+sudo cp -r ./src/* /var/www/<framework>/<dirforplugin>
+sudo chown -R www-data:www-data /var/www/<framework>/<dirforplugin>
+```
 
 ## 📖 Documentation
 
